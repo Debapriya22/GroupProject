@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6657d9">
+
+    <meta name="description" content="CampusConnect Student Management Dashboard">
+    <title>CampusConnect | Student Management Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app-container">
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">CC</div>
+            <div>
+                <h2>CampusConnect</h2>
+                <span>Student Portal</span>
+            </div>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="profile-avatar" id="sidebarAvatar">S</div>
+
+            <div class="sidebar-profile-info">
+                <strong id="sidebarUserName">Student</strong>
+                <span id="sidebarUserRole">Student Account</span>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MAIN MENU</div>
+
+        <nav id="mainNavigation" class="navigation">
+
+            <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#academics" class="nav-link" data-section="academics">
+                <span class="nav-icon">▤</span>
+                <span>Academics</span>
+            </a>
+
+            <a href="#attendance" class="nav-link" data-section="attendance">
+                <span class="nav-icon">◷</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="#assignments" class="nav-link" data-section="assignments">
+                <span class="nav-icon">▣</span>
+                <span>Assignments</span>
+            </a>
+
+            <a href="#faculty" class="nav-link" data-section="faculty">
+                <span class="nav-icon">♙</span>
+                <span>Faculty Panel</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+                <div class="help-icon">✦</div>
+                <strong>Need help?</strong>
+                <p>Contact your campus administrator for assistance.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                © 2026 CampusConnect
+            </div>
+
+        </div>
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu"
+                    type="button"
+                >
+                    ☰
+                </button>
+
+                <div>
+                    <p class="breadcrumb">
+                        CampusConnect /
+                        <span id="breadcrumbCurrent">Dashboard</span>
+                    </p>
+
+                    <h1 id="pageTitle">Dashboard Overview</h1>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="role-switcher">
+                    <label for="roleSelector">View as</label>
+
+                    <select id="roleSelector">
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                </div>
+
+                <button
+                    class="icon-button notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                    type="button"
+                >
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+
+                    <div>
+                        <strong id="topbarUserName">Student</strong>
+                        <span id="topbarUserRole">Student</span>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+
+        <!-- =====================================
+             WELCOME BANNER
+        ====================================== -->
+        <section class="welcome-banner" id="welcomeBanner">
+
+            <div class="welcome-content">
+
+                <span class="welcome-tag">
+                    YOUR CAMPUS, YOUR PROGRESS
+                </span>
+
+                <h2 id="welcomeTitle">Welcome back!</h2>
+
+                <p id="welcomeText">
+                    Track your academic journey and stay on top of your progress.
+                </p>
+
+            </div>
+
+            <div class="welcome-decoration">
+                <div class="decoration-circle circle-one"></div>
+                <div class="decoration-circle circle-two"></div>
+                <div class="decoration-circle circle-three"></div>
+                <div class="welcome-symbol">✦</div>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             STUDENT DASHBOARD
+        ====================================== -->
+        <section id="studentView">
+
+            <!-- STUDENT STATISTICS -->
+            <section class="stats-grid" id="stats">
+                <!-- Generated dynamically by JavaScript -->
+            </section>
+
+
+            <!-- =================================
+                 CURRENT CGPA
+            ================================== -->
+            <section class="content-section" id="academicSummary">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            ACADEMIC OVERVIEW
+                        </span>
+
+                        <h2>Current Academic Performance</h2>
+
+                        <p>
+                            Your overall academic progress at a glance.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="academic-summary-card">
+
+                    <div class="cgpa-content">
+
+                        <div class="cgpa-icon">✧</div>
+
+                        <div>
+                            <span class="summary-label">
+                                CURRENT CGPA
+                            </span>
+
+                            <h3 id="currentCGPA">0.00</h3>
+
+                            <p>
+                                Overall academic performance
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="cgpa-decoration">
+                        ACADEMIC EXCELLENCE
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 STUDENT PROFILE
+            ================================== -->
+            <section class="content-section" id="dashboard">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            YOUR INFORMATION
+                        </span>
+
+                        <h2>Student Profile</h2>
+
+                        <p>
+                            Your personal and academic information.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-card" id="studentProfile">
+
+                    <div class="profile-card-header">
+
+                        <div
+                            class="profile-large-avatar"
+                            id="profileAvatar"
+                        >
+                            S
+                        </div>
+
+                        <div>
+                            <h3 id="profileName">Student Name</h3>
+                            <p id="profileStudentId">Student ID</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-details">
+
+                        <div class="profile-detail">
+                            <span>Department</span>
+                            <strong id="profileDepartment">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Year</span>
+                            <strong id="profileYear">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Degree</span>
+                            <strong id="profileDegree">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Batch</span>
+                            <strong id="profileBatch">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Email</span>
+                            <strong id="profileEmail">-</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 SEMESTER-WISE SGPA
+            ================================== -->
+            <section class="content-section" id="academics">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            YOUR PROGRESS
+                        </span>
+
+                        <h2>Academic Performance</h2>
+
+                        <p>
+                            Track your SGPA across all six semesters.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="chart-card">
+
+                    <div class="chart-card-heading">
+
+                        <div>
+                            <h3>Semester-wise SGPA</h3>
+
+                            <p>
+                                Your academic performance over time
+                            </p>
+                        </div>
+
+                        <span class="chart-badge">
+                            6 Semesters
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="academicPerformanceChart"
+                            role="img"
+                            aria-label="Semester-wise SGPA chart"
+                        >
+                            Semester-wise SGPA chart
+                        </canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ATTENDANCE OVERVIEW
+            ================================== -->
+            <section class="content-section" id="attendance">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            ATTENDANCE TRACKER
+                        </span>
+
+                        <h2>Attendance Overview</h2>
+
+                        <p>
+                            Monitor your attendance and subject-wise progress.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="chart-card">
+
+                    <div class="chart-card-heading">
+
+                        <div>
+                            <h3>Attendance Trend</h3>
+
+                            <p>
+                                Subject-wise attendance comparison
+                            </p>
+                        </div>
+
+                        <span class="chart-badge">
+                            75% Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="attendanceComparisonChart"
+                            role="img"
+                            aria-label="Subject-wise attendance chart"
+                        >
+                            Subject-wise attendance chart
+                        </canvas>
+
+                    </div>
+
+
+                    <!-- ALL EIGHT SUBJECTS -->
+                    <div class="course-graph-legend">
+
+                        <div>
+                            <span class="legend-dot legend-one"></span>
+                            Data Structures
+                        </div>
+
+                        <div>
+                            <span class="legend-dot legend-two"></span>
+                            Web Development
+                        </div>
+
+                        <div>
+                            <span class="legend-dot legend-three"></span>
+                            Database Systems
+                        </div>
+
+                        <div>
+                            <span class="legend-dot legend-four"></span>
+                            Java Programming
+                        </div>
+
+                        <div>
+                            <span class="legend-dot legend-five"></span>
+                            Statistical Mathematics
+                        </div>
+
+                        <div>
+                            <span class="legend-dot legend-six"></span>
+                            Operating Systems
+                        </div>
+
+                        <div>
+                            <span class="legend-dot legend-seven"></span>
+                            RDBMS
+                        </div>
+
+                        <div>
+                            <span class="legend-dot legend-eight"></span>
+                            Computer Networks
+                        </div>
+
+                    </div>
+
+
+                    <div class="attendance-threshold-note">
+                        <span class="threshold-line"></span>
+                        Minimum required attendance: 75%
+                    </div>
+
+                </div>
+
+
+                <!-- SUBJECT-WISE ATTENDANCE CARDS -->
+                <div class="subject-attendance-section">
+
+                    <div class="section-heading compact-heading">
+
+                        <div>
+                            <h3>Subject-wise Attendance</h3>
+
+                            <p>
+                                Your attendance percentage in each subject.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="courseAttendanceContainer"
+                        class="course-attendance-grid"
+                    >
+                        <!-- Generated dynamically -->
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 INTERNAL ASSESSMENT MARKS
+            ================================== -->
+            <section class="content-section" id="internalMarks">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            ASSESSMENT DETAILS
+                        </span>
+
+                        <h2>Internal Assessment</h2>
+
+                        <p>
+                            View assessment, attendance and total internal marks.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-card">
+
+                    <div class="table-responsive">
+
+                        <table class="data-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Assessment / 35</th>
+                                    <th>Attendance / 5</th>
+                                    <th>Total / 40</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="internalMarksTable">
+
+                                <tr>
+                                    <td colspan="4">
+                                        Loading assessment details...
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 PENDING ASSIGNMENTS
+            ================================== -->
+            <section class="content-section" id="assignments">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            STAY ORGANIZED
+                        </span>
+
+                        <h2>Pending Assignments</h2>
+
+                        <p>
+                            Keep track of your upcoming academic tasks.
+                        </p>
+                    </div>
+
+                    <span
+                        class="count-badge"
+                        id="pendingAssignmentCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="assignments-container"
+                    id="pendingAssignments"
+                >
+                    <!-- Generated dynamically -->
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =====================================
+             FACULTY DASHBOARD
+        ====================================== -->
+        <section id="facultyView" hidden>
+
+
+            <!-- FACULTY INTRO -->
+            <div class="faculty-intro">
+
+                <div>
+                    <span class="section-eyebrow">
+                        FACULTY WORKSPACE
+                    </span>
+
+                    <h2>Manage your classroom.</h2>
+
+                    <p>
+                        Manage student records, academic marks and attendance
+                        from one place.
+                    </p>
+                </div>
+
+                <div class="faculty-intro-icon">✦</div>
+
+            </div>
+
+
+            <!-- =================================
+                 FACULTY STATISTICS
+            ================================== -->
+            <section class="stats-grid faculty-stats-grid" id="facultyStats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">♙</div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <h3 id="facultyTotalStudents">0</h3>
+                        <small>Registered students</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">▤</div>
+
+                    <div>
+                        <span>Departments</span>
+                        <h3 id="facultyDepartmentCount">0</h3>
+                        <small>Active departments</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">◷</div>
+
+                    <div>
+                        <span>Average Attendance</span>
+                        <h3 id="facultyAverageAttendance">0%</h3>
+                        <small>Across student records</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">✧</div>
+
+                    <div>
+                        <span>Average CGPA</span>
+                        <h3 id="facultyAverageCGPA">0.00</h3>
+                        <small>Academic performance</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 FACULTY QUICK ACTIONS
+            ================================== -->
+            <section class="content-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            QUICK ACTIONS
+                        </span>
+
+                        <h2>Faculty Tools</h2>
+
+                        <p>
+                            Choose an action to manage student information.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="faculty-action-grid">
+
+
+                    <!-- ADD STUDENT -->
+                    <button
+                        type="button"
+                        class="faculty-action-card"
+                        id="addStudentButton"
+                    >
+
+                        <span class="faculty-action-icon purple">
+                            ＋
+                        </span>
+
+                        <span>
+                            <strong>Add Student</strong>
+                            <small>Create a new student record</small>
+                        </span>
+
+                        <span class="action-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- UPLOAD MARKS -->
+                    <button
+                        type="button"
+                        class="faculty-action-card"
+                        id="uploadMarksButton"
+                    >
+
+                        <span class="faculty-action-icon blue">
+                            ▤
+                        </span>
+
+                        <span>
+                            <strong>Upload Marks</strong>
+                            <small>Update subject assessment marks</small>
+                        </span>
+
+                        <span class="action-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- MANAGE ATTENDANCE -->
+                    <button
+                        type="button"
+                        class="faculty-action-card"
+                        id="manageAttendanceButton"
+                    >
+
+                        <span class="faculty-action-icon green">
+                            ◷
+                        </span>
+
+                        <span>
+                            <strong>Manage Attendance</strong>
+                            <small>Record student attendance</small>
+                        </span>
+
+                        <span class="action-arrow">→</span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 STUDENT RECORDS
+            ================================== -->
+            <section class="content-section" id="faculty">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            STUDENT DIRECTORY
+                        </span>
+
+                        <h2>Student Records</h2>
+
+                        <p>
+                            Search, filter and manage student profiles.
+                        </p>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="facultyAddStudentButton"
+                    >
+                        <span>＋</span>
+                        Add Student
+                    </button>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTER -->
+                <div class="faculty-toolbar">
+
+                    <div class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Search by student name or ID..."
+                            aria-label="Search students"
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="departmentFilter"
+                        aria-label="Filter by department"
+                    >
+                        <option value="">All Departments</option>
+                    </select>
+
+                </div>
+
+
+                <!-- STUDENT TABLE -->
+                <div class="table-card">
+
+                    <div class="table-responsive">
+
+                        <table class="data-table faculty-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Student ID</th>
+                                    <th>Department</th>
+                                    <th>Year</th>
+                                    <th>CGPA</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody id="studentTable">
+
+                                <tr>
+                                    <td colspan="7">
+                                        Loading student records...
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="table-footer">
+                        <span id="recordCount">
+                            Showing 0 students
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 FACULTY ATTENDANCE MANAGEMENT
+            ================================== -->
+            <section
+                class="content-section"
+                id="facultyAttendance"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            ATTENDANCE MANAGEMENT
+                        </span>
+
+                        <h2>Class Attendance</h2>
+
+                        <p>
+                            Review and update attendance records for
+                            individual students.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- ATTENDANCE FILTERS -->
+                <div class="faculty-attendance-toolbar">
+
+                    <div class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="attendanceSearchInput"
+                            placeholder="Find a student..."
+                            aria-label="Search attendance records"
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="attendanceSubjectFilter"
+                        aria-label="Filter attendance by subject"
+                    >
+
+                        <option value="">All Subjects</option>
+
+                        <option value="Data Structures">
+                            Data Structures
+                        </option>
+
+                        <option value="Web Development">
+                            Web Development
+                        </option>
+
+                        <option value="Database Systems">
+                            Database Systems
+                        </option>
+
+                        <option value="Java Programming">
+                            Java Programming
+                        </option>
+
+                        <option value="Statistical Mathematics">
+                            Statistical Mathematics
+                        </option>
+
+                        <option value="Operating Systems">
+                            Operating Systems
+                        </option>
+
+                        <option value="RDBMS">
+                            RDBMS
+                        </option>
+
+                        <option value="Computer Networks">
+                            Computer Networks
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ATTENDANCE TABLE -->
+                <div class="table-card">
+
+                    <div class="table-responsive">
+
+                        <table class="data-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Student ID</th>
+                                    <th>Subject</th>
+                                    <th>Classes Attended</th>
+                                    <th>Total Classes</th>
+                                    <th>Attendance</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody id="facultyAttendanceTable">
+
+                                <tr>
+                                    <td colspan="7">
+                                        Attendance records will appear here.
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 CLASSROOM OVERVIEW
+            ================================== -->
+            <section class="content-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            ACADEMIC MONITORING
+                        </span>
+
+                        <h2>Classroom Overview</h2>
+
+                        <p>
+                            Monitor student performance and attendance trends.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="faculty-overview-grid">
+
+
+                    <div class="overview-card">
+
+                        <div class="overview-card-icon">◷</div>
+
+                        <div>
+                            <span>Attendance Requirement</span>
+                            <h3>75%</h3>
+                            <p>Minimum attendance threshold</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-card">
+
+                        <div class="overview-card-icon">▤</div>
+
+                        <div>
+                            <span>Assessment Subjects</span>
+                            <h3>8</h3>
+                            <p>Subjects available for marks entry</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =====================================
+             DYNAMIC MODAL ROOT
+        ====================================== -->
+        <div id="modalRoot"></div>
+
+
+        <!-- =====================================
+             TOAST NOTIFICATIONS
+        ====================================== -->
+        <div
+            id="toastContainer"
+            class="toast-container"
+            aria-live="polite"
+            aria-atomic="true"
+        ></div>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+        <footer class="main-footer">
+
+            <span>
+                © 2026 CampusConnect. All rights reserved.
+            </span>
+
+            <span>
+                Made for better campus management ✦
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+<script src="script.js"></script>
+
+</body>
+</html>
